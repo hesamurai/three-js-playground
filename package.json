@@ -3,7 +3,11 @@
   "author": "Hesam Bahrami",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://<username>.github.io/<repo>/",
+  "homepage": "https://hesamurai.github.io/three-js-playground/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hesamurai/three-js-playground"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
