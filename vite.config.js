@@ -6,4 +6,7 @@ export default {
     outDir: '../dist',
     sourcemap: true,
   },
+  resolve: {
+    preserveSymlinks: true,
+  },
 }
