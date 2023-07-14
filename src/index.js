@@ -9,6 +9,7 @@ import {
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import cube from './objects/box-green';
 import line from './objects/line-blue.js';
+import loadVaseGLTFModel from './objects/vase-gltf';
 
 const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -24,6 +25,11 @@ scene.add(light);
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 
+loadVaseGLTFModel()
+  .then(gltfModel => {
+    scene.add(gltfModel.scene)
+  })
+  .catch(error => console.log(error));
 scene.add(cube);
 scene.add(line);
 
