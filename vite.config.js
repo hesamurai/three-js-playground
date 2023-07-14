@@ -1,3 +1,5 @@
+import gltf from 'vite-plugin-gltf';
+
 export default {
   root: 'src',
   build: {
@@ -5,6 +7,9 @@ export default {
     outDir: '../dist',
     sourcemap: true,
   },
+  plugins: [
+    gltf(),
+  ],
   resolve: {
     preserveSymlinks: true,
   },
