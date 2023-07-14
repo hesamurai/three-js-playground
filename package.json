@@ -1,12 +1,15 @@
 {
   "name": "three-js-playground",
+  "author": "Hesam Bahrami",
+  "private": true,
   "version": "0.1.0",
-  "description": "",
-  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "devDependencies": {
+    "vite": "^4.4.0"
+  }
 }
