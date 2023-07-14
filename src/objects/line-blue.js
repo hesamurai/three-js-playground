@@ -1,9 +1,9 @@
 import { BufferGeometry, Line, LineBasicMaterial, Vector3 } from 'three';
 
 const points = [
-  new Vector3(-3, 0, 0),
-  new Vector3(0, 3, 0),
-  new Vector3(3, 0, 0),
+  new Vector3(-2, 0, 0),
+  new Vector3(0, 2, 0),
+  new Vector3(2, 0, 0),
 ];
 
 const geometry = new BufferGeometry().setFromPoints(points);

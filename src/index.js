@@ -31,7 +31,7 @@ function animate() {
   requestAnimationFrame( animate );
   cube.rotation.x += 0.002;
   cube.rotation.y += 0.005;
-  line.rotation.x += 0.03;
+  line.rotation.x += 0.01;
   renderer.render( scene, camera );
 }
 
