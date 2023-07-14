@@ -1,6 +1,7 @@
 import './style.css'
 
 import {
+  AmbientLight,
   PerspectiveCamera,
   Scene,
   WebGLRenderer
@@ -13,6 +14,12 @@ const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 camera.position.set( 0, 0, 5 );
 camera.lookAt( 0, 0, 0 );
+
+// add some light
+const color = 0xFFFFFF;
+const intensity = 1;
+const light = new AmbientLight(color, intensity);
+scene.add(light);
 
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
