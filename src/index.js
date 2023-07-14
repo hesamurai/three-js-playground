@@ -8,13 +8,13 @@ import {
   Scene,
   WebGLRenderer
 } from 'three';
+import WebGL from 'three/addons/capabilities/WebGL.js';
 
 const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
 
 const geometry = new BoxGeometry( 1, 1, 1 );
 const material = new MeshBasicMaterial( { color: 0x00ff00 } );
@@ -30,4 +30,10 @@ function animate() {
   renderer.render( scene, camera );
 }
 
-animate();
+if (WebGL.isWebGLAvailable()) {
+  document.body.appendChild( renderer.domElement );
+  animate();
+} else {
+  console.log(WebGL.getWebGLErrorMessage());
+  document.querySelector('body').appendChild(WebGL.getWebGLErrorMessage());
+}
