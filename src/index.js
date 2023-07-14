@@ -7,16 +7,18 @@ import {
 } from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import cube from './objects/box-green';
+import line from './objects/line-blue.js';
 
 const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+camera.position.set( 0, 0, 5 );
+camera.lookAt( 0, 0, 0 );
 
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 scene.add(cube);
-
-camera.position.z = 5;
+scene.add(line);
 
 function animate() {
   requestAnimationFrame( animate );
