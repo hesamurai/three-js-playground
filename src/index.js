@@ -14,7 +14,7 @@ import loadVaseGLTFModel from './objects/vase-gltf';
 
 const scene = new Scene();
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set( 0, 0, 5 );
+camera.position.set( 1, 2, 5 );
 camera.lookAt( 0, 0, 0 );
 
 // add some light
