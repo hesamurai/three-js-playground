@@ -11,7 +11,8 @@ import {
 import { OrbitControls} from 'three/addons/controls/OrbitControls';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import cube from './objects/box-green';
-import line from './objects/line-blue.js';
+import line from './objects/line-blue';
+import sphere from './objects/sphere-wireframe';
 import loadVaseGLTFModel from './objects/vase-gltf';
 
 const renderer = new WebGLRenderer();
@@ -47,6 +48,7 @@ loadVaseGLTFModel()
   .catch(error => console.log(error));
 scene.add(cube);
 scene.add(line);
+scene.add(sphere);
 
 function animate() {
   requestAnimationFrame( animate );
