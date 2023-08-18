@@ -3,6 +3,7 @@ import './style.css'
 import {
   AxesHelper,
   AmbientLight,
+  GridHelper,
   PerspectiveCamera,
   Scene,
   WebGLRenderer
@@ -34,6 +35,10 @@ scene.add(light);
 // add axes helper
 const axesHelper = new AxesHelper(5);
 scene.add(axesHelper);
+
+// add grid helper
+const gridHelper = new GridHelper(10);
+scene.add(gridHelper);
 
 loadVaseGLTFModel()
   .then(gltfModel => {
