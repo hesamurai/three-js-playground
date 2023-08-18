@@ -1,6 +1,7 @@
 import './style.css'
 
 import {
+  AxesHelper,
   AmbientLight,
   PerspectiveCamera,
   Scene,
@@ -21,6 +22,10 @@ const color = 0xFFFFFF;
 const intensity = 1;
 const light = new AmbientLight(color, intensity);
 scene.add(light);
+
+// add axes helper
+const axesHelper = new AxesHelper(5);
+scene.add(axesHelper);
 
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
