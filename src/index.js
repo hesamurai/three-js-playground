@@ -51,20 +51,29 @@ scene.add(cube);
 scene.add(line);
 scene.add(sphere);
 
+let animationStep = 0;
+
 function animate() {
   requestAnimationFrame( animate );
   cube.rotation.x += 0.002;
   cube.rotation.y += 0.005;
   line.rotation.x += 0.01;
+
+  // sphere bouncing
+  animationStep += options['Bouncing Speed'];
+  sphere.position.y = 2 * Math.abs(Math.sin(animationStep));
+
   renderer.render( scene, camera );
 }
 
 // build the options GUI
 const gui = new dat.GUI();
 const options = {
+  'Bouncing Speed': 0.01,
   'Sphere Colour': '#00ff00',
   'Sphere Wireframe': true,
 };
+gui.add(options, 'Bouncing Speed', 0, 0.1).onChange((number) => options['Bouncing Speed'] = number);
 gui.addColor(options, 'Sphere Colour').onChange((colourCode) => sphere.material.color.set(colourCode));
 gui.add(options, 'Sphere Wireframe').onChange((bool) => sphere.material.wireframe = bool);
 
