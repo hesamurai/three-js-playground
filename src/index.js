@@ -30,9 +30,8 @@ const orbitControl = new OrbitControls(camera, renderer.domElement)
 // orbitControl.update(); // the video tutorial said this line is needed, but it does not seem so
 
 // add some light
-const color = 0xFFFFFF;
 const intensity = 1;
-const light = new AmbientLight(color, intensity);
+const light = new AmbientLight(COLOURS.AMBIENT_LIGHT, intensity);
 scene.add(light);
 
 // add axes helper
@@ -70,10 +69,12 @@ function animate() {
 // build the options GUI
 const gui = new dat.GUI();
 const options = {
+  'Ambient Light': COLOURS.AMBIENT_LIGHT,
   'Bouncing Speed': 0.01,
   'Sphere Colour': COLOURS.SPHERE,
   'Sphere Wireframe': true,
 };
+gui.addColor(options, 'Ambient Light').onChange((colourCode) => light.color.set(colourCode));
 gui.add(options, 'Bouncing Speed', 0, 0.1).onChange((number) => options['Bouncing Speed'] = number);
 gui.addColor(options, 'Sphere Colour').onChange((colourCode) => sphere.material.color.set(colourCode));
 gui.add(options, 'Sphere Wireframe').onChange((bool) => sphere.material.wireframe = bool);
