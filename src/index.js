@@ -9,12 +9,13 @@ import {
   WebGLRenderer
 } from 'three';
 import * as dat from 'dat.gui';
-import { OrbitControls} from 'three/addons/controls/OrbitControls';
+import { OrbitControls } from 'three/addons/controls/OrbitControls';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import cube from './objects/box-green';
 import line from './objects/line-blue';
 import sphere from './objects/sphere-wireframe';
 import loadVaseGLTFModel from './objects/vase-gltf';
+import { COLOURS } from './config.js';
 
 const renderer = new WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -70,7 +71,7 @@ function animate() {
 const gui = new dat.GUI();
 const options = {
   'Bouncing Speed': 0.01,
-  'Sphere Colour': '#00ff00',
+  'Sphere Colour': COLOURS.SPHERE,
   'Sphere Wireframe': true,
 };
 gui.add(options, 'Bouncing Speed', 0, 0.1).onChange((number) => options['Bouncing Speed'] = number);

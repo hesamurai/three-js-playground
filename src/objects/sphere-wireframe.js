@@ -1,8 +1,9 @@
 import { SphereGeometry, Mesh, MeshBasicMaterial } from 'three';
+import { COLOURS } from '../config.js';
 
 const geometry = new SphereGeometry(0.5);
 const material = new MeshBasicMaterial( {
-  color: 0x00ff00,
+  color: COLOURS.SPHERE,
   wireframe: true,
 });
 const sphere = new Mesh( geometry, material );
