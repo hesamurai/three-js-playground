@@ -8,6 +8,7 @@ import {
   Scene,
   WebGLRenderer
 } from 'three';
+import * as dat from 'dat.gui';
 import { OrbitControls} from 'three/addons/controls/OrbitControls';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import cube from './objects/box-green';
@@ -57,6 +58,15 @@ function animate() {
   line.rotation.x += 0.01;
   renderer.render( scene, camera );
 }
+
+// build the options GUI
+const gui = new dat.GUI();
+const options = {
+  'Sphere Colour': '#00ff00',
+  'Sphere Wireframe': true,
+};
+gui.addColor(options, 'Sphere Colour').onChange((colourCode) => sphere.material.color.set(colourCode));
+gui.add(options, 'Sphere Wireframe').onChange((bool) => sphere.material.wireframe = bool);
 
 if (WebGL.isWebGLAvailable()) {
   document.body.appendChild( renderer.domElement );
